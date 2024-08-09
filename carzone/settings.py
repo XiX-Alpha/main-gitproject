@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
     'cars.apps.CarsConfig',
+    'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     'ckeditor',
     'django.contrib.humanize',
+
 ]
 
 MIDDLEWARE = [
@@ -107,6 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -130,3 +134,18 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Messages
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
+
+# Email sending
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'jst4u.12453@gmail.com'
+EMAIL_HOST_PASSWORD = 'ayushdborhade050604'
+EMAIL_USE_TLS = True
